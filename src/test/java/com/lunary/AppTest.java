@@ -39,5 +39,7 @@ public class AppTest  extends TestCase
       String csv = "123,466,abc,,,,";
       String[] values = StringUtil.split(csv, ',');
       assertTrue(Arrays.equals(values, new String[] {"123", "466", "abc", "", "", "", ""}));
+      
+      assertTrue(false);
     }
 }
