@@ -1,14 +1,17 @@
-package lunary.modelbasedb;
+package com.lunary;
+
+import java.util.Arrays;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import com.lunary.util.StringUtil;
+
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
+public class AppTest  extends TestCase
 {
     /**
      * Create the test case
@@ -31,8 +34,10 @@ public class AppTest
     /**
      * Rigourous Test :-)
      */
-    public void testApp()
-    {
-        assertTrue( true );
+    public void testApp() {
+      
+      String csv = "123,466,abc,,,,";
+      String[] values = StringUtil.split(csv, ',');
+      assertTrue(Arrays.equals(values, new String[] {"123", "466", "abc", "", "", "", ""}));
     }
 }
