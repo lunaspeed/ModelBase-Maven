@@ -21,7 +21,6 @@ public abstract class AbstractPaginateSqlTemplate implements PaginateSqlTemplate
   public String formatPaginateSql(String sql, String orderByColumns, int page, int rowsPerPage) {
 
     boolean wrapSql = false;
-    // if (containsDistinct(sql)) {
     if (distinctPattern.matcher(sql).matches()) {
       sql = distinctFormat.format(new Object[] {sql});
       wrapSql = true;
@@ -33,10 +32,6 @@ public abstract class AbstractPaginateSqlTemplate implements PaginateSqlTemplate
     }
     return formatProcessedPaginateSqlFormat(sql, orderByColumns, calStartRow(page, rowsPerPage), calEndRow(page, rowsPerPage), wrapSql);
   }
-
-  // protected boolean containsDistinct(String sql) {
-  // return sql.contains(" DISTINCT ");
-  // }
 
   protected int calStartRow(int page, int rowsPerPage) {
     return ((page - 1) * rowsPerPage) + 1;

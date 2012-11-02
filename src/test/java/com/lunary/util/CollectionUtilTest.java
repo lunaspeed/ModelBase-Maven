@@ -18,7 +18,7 @@ public class CollectionUtilTest {
     assertTrue("empty List is empty", CollectionUtil.isEmpty(new ArrayList<Object>()));
     List<Object> list = new ArrayList<Object>();
     list.add(new Object());
-    assertFalse("collection with one element", CollectionUtil.isEmpty(list));
+    assertFalse("collection with one element is not empty", CollectionUtil.isEmpty(list));
   }
   
 //  @Test
