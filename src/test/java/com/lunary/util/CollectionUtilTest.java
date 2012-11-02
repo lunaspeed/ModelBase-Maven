@@ -7,6 +7,8 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.List;
 
+import junit.framework.Assert;
+
 import org.junit.Test;
 
 public class CollectionUtilTest {
@@ -25,5 +27,10 @@ public class CollectionUtilTest {
     list.add(new Object());
     assertFalse("collection with one element", CollectionUtil.isEmpty(list));
     assertTrue("collection with one element", CollectionUtil.isEmpty(list));
+  }
+  
+  @Test
+  public void fail() {
+    Assert.fail("this is intended failure");
   }
 }
